@@ -15,17 +15,18 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-
+position: fixed;
 }
 #logo img{
   width: 40px;
  margin-top: 20px;
  margin-left: 10px;
+ 
 }
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 110vh;
       overflow: hidden;
       background-position: center;
     }
@@ -71,6 +72,7 @@ body{
 
   z-index: 20;
   mix-blend-mode: difference;   /* ⭐ ADD THIS */
+    position: fixed;
 }
 
 
@@ -83,6 +85,7 @@ body{
   /* ⭐ Make links more readable */
   text-shadow: 0px 0px 6px rgba(255,255,255,0.45);  
   -webkit-text-stroke: 0.4px rgba(255,255,255,0.4); 
+
 }
 
 
@@ -103,6 +106,7 @@ body{
       opacity: 0.75;
       z-index: 20;
       font-size: 1.5rem;
+      position: fixed;
    
     
      
@@ -157,6 +161,10 @@ top: 40px;
   position: absolute;
   top: 0;
   border-radius: 50%;
+    position: fixed; /* IMPORTANT: Always stays on screen */
+  pointer-events: none; /* Mouse click normal rahe */
+  z-index: 9999; /* Sab ke upar rahe */
+  transform: translate(-50%, -50%);
 }
     /* Scroll Button */
     .scroll-btn {
@@ -175,6 +183,7 @@ top: 40px;
       opacity: 0.85;
       transition: 0.3s;
       z-index: 20;
+      position: fixed;
     }
 
     .scroll-btn:hover {
@@ -190,6 +199,171 @@ top: 40px;
       margin-top: 10px;
       display: none;
     }
+
+
+.brandium-hero {
+    background: #000;
+    color: #fff;
+    padding: 150px 8vw;
+    border-bottom: 1px solid transparent;
+
+ 
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* INNER CONTENT */
+.inner {
+    max-width: 1200px;
+}
+
+/* Small Yellow Tag */
+.tag {
+    color: #d7ff00;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Big Heading */
+.brandium-hero h1 {
+    font-size: clamp(38px, 4.6vw, 70px);
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+/* Grow Button */
+.grow-btn {
+    margin-top: 50px;
+    padding: 18px 40px;
+    background: #fff;
+    border-radius: 40px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    color: #000;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.grow-btn .dot {
+    width: 12px;
+    height: 12px;
+    background: #d7ff00;
+    border-radius: 50%;
+}
+
+/* Bottom Line */
+.bottom-line {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: 0.5;
+    margin-top: 70px;
+}
+
+/* Side Email Rotated */
+.side-email {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: left top;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* Scroll Circle */
+.scroll-circle {
+    position: absolute;
+    right: 40px;
+    bottom: 60px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0.9;
+}
+
+.arrow {
+    font-size: 30px;
+}
+.grow-btn {
+    padding: 20px 50px;
+    background: #fff;
+    border-radius: 50px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+/* Hover background */
+.grow-btn:hover {
+    background: #d9ff06;
+}
+
+/* Dot styling */
+.grow-btn .dot {
+    width: 16px;
+    height: 16px;
+    background: #d9ff06;   /* yellow dot */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+/* Arrow inside dot, initially hidden */
+.grow-btn .dot i {
+    position: absolute;
+    bottom: 0;             /* start at dot center */
+    left: 50%;
+    transform: translate(-50%, 0); /* center horizontally */
+    font-size: 20px;
+    color: #000;
+    display: none;         /* hidden initially */
+}
+
+
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+    .brandium-hero {
+        padding: 120px 30px;
+        border-top-left-radius: 140px;
+        border-top-right-radius: 140px;
+    }
+
+    .side-email {
+        display: none;
+    }
+
+    .scroll-circle {
+        right: 20px;
+        bottom: 40px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
 
     /* 📱 MOBILE RESPONSIVE */
     @media (max-width: 768px) {
