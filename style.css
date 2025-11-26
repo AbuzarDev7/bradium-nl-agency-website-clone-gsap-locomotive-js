@@ -201,63 +201,82 @@ top: 40px;
     }
 
 
+
+    /* ===== BRANDIUM HERO SECTION ===== */
 .brandium-hero {
-    background: #000;
-    color: #fff;
-    padding: 150px 8vw;
-    border-bottom: 1px solid transparent;
-
- 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 200px;
-top: 50px;
-    position: relative;
-    overflow: hidden;
+  background: #000;
+  color: #fff;
+  padding: 150px 8vw;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
 }
 
-/* INNER CONTENT */
 .inner {
-    max-width: 1200px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  text-align: left;    
+  position: relative;
+  right: 20px;    
 }
 
-/* Small Yellow Tag */
 .tag {
-    color: #d7ff00;
-    font-size: 18px;
-    margin-bottom: 40px;
+  color: #d7ff00;
+  font-size: 18px;
+  margin-bottom: 40px;
+  display: inline-block;
 }
 
-/* Big Heading */
-.brandium-hero h1 {
-    font-size: clamp(38px, 4.6vw, 70px);
-    line-height: 1.2;
-    font-weight: 300;
+.animated-h1 {
+  font-size: clamp(58px, 3.5vw, 50px);
+  line-height: 1.2;
+  font-weight: 300;
+  margin: 0;
 }
 
-/* Grow Button */
 .grow-btn {
-    margin-top: 50px;
-    padding: 18px 40px;
-    background: #fff;
-    border-radius: 40px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    color: #000;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+  padding: 15px 35px;
+  font-size: 18px;
+  background: #d7ff00;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
 }
 
-.grow-btn .dot {
-    width: 12px;
-    height: 12px;
-    background: #d7ff00;
-    border-radius: 50%;
+.grow-btn:hover {
+  transform: scale(1.05);
 }
+
+/* SVG line LEFT aligned */
+.svg-line {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* LEFT align SVG */
+}
+
+.rope-svg {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+}
+
+/* ===== RESPONSIVE ===== */
+
+
+
+
 
 /* Bottom Line */
 .bottom-line {
@@ -268,16 +287,6 @@ top: 50px;
     margin-top: 70px;
 }
 
-/* Side Email Rotated */
-.side-email {
-    position: absolute;
-    left: 25px;
-    top: 50%;
-    transform: rotate(-90deg) translateY(-50%);
-    transform-origin: left top;
-    font-size: 18px;
-    opacity: 0.8;
-}
 
 /* Scroll Circle */
 .scroll-circle {
@@ -344,7 +353,122 @@ top: 50px;
 }
 
 
+.tag {
+  color: #d7ff00;
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+
+
+
+/* Each word span for animation */
+.animated-h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+  word-break: break-word;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .animated-h1 {
+    font-size: clamp(20px, 5vw, 35px);
+    line-height: 1.3;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  .brandium-hero {
+    padding: 120px 6vw;
+  }
+  .animated-h1 {
+    font-size: clamp(32px, 5vw, 70px);
+  }
+  .grow-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandium-hero {
+    padding: 100px 5vw;
+  }
+  .animated-h1 {
+    font-size: clamp(28px, 5.5vw, 60px);
+  }
+  .tag {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .grow-btn {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+  .svg-line {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandium-hero {
+    padding: 80px 4vw;
+  }
+  .animated-h1 {
+    font-size: clamp(24px, 6vw, 50px);
+  }
+  .tag {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .grow-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  .svg-line {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* RESPONSIVE FIXES */
+
 @media (max-width: 768px) {
     .brandium-hero {
         padding: 120px 30px;

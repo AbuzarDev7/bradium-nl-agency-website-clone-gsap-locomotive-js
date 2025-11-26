@@ -5,8 +5,7 @@ const logoImg = document.querySelector("#logo img")
 const spans = document.querySelectorAll(".text-overlay span");
 
 
-    const line = document.querySelector(".bottom-line");
-    const section = document.querySelector(".brandium-hero");
+const rope = document.querySelector("#rope");
 
 // Timeline
 const sideBarAnimate = ()=>{
@@ -120,7 +119,7 @@ gsap.fromTo(
 animateText()
 
 
-const rope = document.querySelector("#rope");
+
 const svgWidth = 1200;
 const segments = 40; // More segments = smoother rope
 const baseY = 100;
@@ -204,3 +203,42 @@ button.addEventListener("mouseleave", () => {
 
 
 
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+// SVG sirf X axis se aaye — left se right
+gsap.fromTo(
+  ".svg-line",
+  { x: -800, opacity: 0 },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".brandium-hero",
+      start: "top 90%",
+      scrub: 1,
+      once: true
+    }
+  }
+);
+const h1 = document.querySelector(".animated-h1");
+const words = h1.textContent.split(" ");
+h1.innerHTML = words.map(word => `<span>${word}&nbsp;</span>`).join("");
+
+// Simple wave-style animation
+gsap.to(".animated-h1 span", {
+  y: 0,
+  opacity: 1,
+  duration: 0.8,
+  ease: "power2.out",
+  stagger: 0.18, // ek-ek karke animate hoga (wave feel)
+  scrollTrigger: {
+    trigger: ".brandium-hero",
+    start: "top 80%",
+    once: true
+  }
+});
