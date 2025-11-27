@@ -3,7 +3,7 @@ const cross = document.querySelector("#full i");
 const fullMenu = document.querySelector("#full");
 const logoImg = document.querySelector("#logo img")
 const spans = document.querySelectorAll(".text-overlay span");
-
+const mediaDivs = document.querySelectorAll("#video, #img");
 
 const rope = document.querySelector("#rope");
 
@@ -241,4 +241,101 @@ gsap.to(".animated-h1 span", {
     start: "top 80%",
     once: true
   }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+const imgsAnimate = ()=>{
+  mediaDivs.forEach(div => {
+  const media = div.querySelector("img, video"); // select img or video inside
+
+  div.addEventListener("mouseenter", () => {
+    gsap.to(media, {
+      scale: 1.05,       // slightly zoom in
+      rotation: 1,       // slight tilt
+      duration: 0.5,
+      ease: "power2.out"
+    });
+  });
+
+  div.addEventListener("mousemove", (e) => {
+    const rect = div.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10; // tilt left/right
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10; // tilt up/down
+    gsap.to(media, {
+      rotationY: x,
+      rotationX: -y,
+      transformPerspective: 800,
+      transformOrigin: "center",
+      ease: "power2.out",
+      duration: 0.3
+    });
+  });
+
+  div.addEventListener("mouseleave", () => {
+    gsap.to(media, {
+      scale: 1,
+      rotation: 0,
+      rotationX: 0,
+      rotationY: 0,
+      duration: 0.5,
+      ease: "power2.out"
+    });
+  });
+});
+
+}
+imgsAnimate()
+
+
+
+
+
+
+const curser = document.getElementById("curser");
+const cursorText = curser.querySelector(".cursor-marquee p");
+const items = document.querySelectorAll(".item");
+let marqueeTween;
+
+// Cursor follow
+window.addEventListener("mousemove", (e) => {
+  gsap.to(curser, {
+    x: e.clientX,
+    y: e.clientY,
+    duration: 0.2,
+    ease: "back.out(1.7)"
+  });
+});
+
+// Hover per div marquee
+items.forEach(item => {
+  const marquee = item.querySelector(".marquee-text p");
+  if (!marquee) return;
+
+  item.addEventListener("mouseenter", () => {
+    cursorText.textContent = marquee.textContent;
+    gsap.to(curser, { width: 200, height: 50, duration: 0.3, ease: "power2.out" });
+
+    marqueeTween = gsap.fromTo(cursorText,
+      { x: 200 },
+      { x: -200, duration: 5, repeat: -1, ease: "linear" }
+    );
+  });
+
+  item.addEventListener("mouseleave", () => {
+    gsap.to(curser, { width: 20, height: 20, duration: 0.3, ease: "power2.out" });
+    if (marqueeTween) gsap.killTweensOf(cursorText);
+    cursorText.textContent = "";
+    gsap.set(cursorText, { x: 0 });
+  });
 });
