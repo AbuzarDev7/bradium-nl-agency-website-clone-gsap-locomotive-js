@@ -10,7 +10,7 @@ html , body{
 }
 body{
   overflow-x: hidden;
-  background-color: #000;
+  /* background-color: #000; */
 }
 #logo {
   position: absolute;
@@ -235,6 +235,7 @@ top: 40px;
   overflow: hidden;
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
+  
 }
 
 .inner {
@@ -312,21 +313,27 @@ top: 40px;
 }
 
 
-/* Scroll Circle */
-.scroll-circle {
-    position: absolute;
-    right: 40px;
-    bottom: 60px;
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0.9;
+.scroll-btn {
+  position: fixed;
+  right: 40px;
+  bottom: 60px;
+  font-size: 3rem;
+  color: #000;
+      background: rgba(255, 255, 0, 0); /* start transparent */
+ 
+    transition: background 0.1s linear; /* smooth transition */
+/* GSAP isko change karega */
+  padding: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
 }
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid #2d2d2d;
+    margin: 30px 0 20px 0;
+  }
 
 .arrow {
     font-size: 30px;
@@ -482,6 +489,7 @@ top: 40px;
   /* padding: 100px 5%; */
   box-sizing: border-box;
   flex-wrap: wrap; /* allow wrapping on small screens */
+  
 }
 
 /* Left side text */
@@ -548,6 +556,7 @@ top: 40px;
   overflow: hidden; /* ensures child elements respect border radius */
   background-color: #f5f5f5;
   color: #000;
+  bottom: 100px;
 }
 
 
@@ -650,10 +659,154 @@ margin-bottom: 60px;
   text-align: center;        /* Center me karega */
   font-size: 5.5rem;           /* Font size bada */
   font-weight: 700;          /* Bold premium look */
-  margin: 120px 0 60px;      /* Upar–neeche spacing */
+  margin: 120px 0 60px;      
   line-height: 1.1;
 }
-/* RESET */
+/* Meta text (AWARDS – 5 min) */
+.ln-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-left: 60px;   /* matches your ln-inner padding */
+}
+
+
+/* News item container */
+.ln-item {
+  padding: 40px 0;
+  border-top: 1px solid #dcdcdc;
+  transition: 0.45s ease;
+  cursor: pointer;
+  position: relative;
+  color: #000;
+}
+.ln-title{
+  font-size: 10rem;       /* 6 REM = approx 96px */
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0;
+  text-align: center;    /* CENTER */
+  white-space: nowrap;
+  color: #000;   /* Ek line me hi rahega */
+}
+
+/* Inner rounded container */
+.ln-inner {
+  min-height: 500px;        /* 🔥 ye add kiya! */
+  padding: 80px 60px;
+  border-radius: 28px;
+  transition: 0.45s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Text vertically center — premium look */
+}
+.ln-inner h2{
+  font-size: 4.5rem;
+}
+.ln-inner p{
+  font-size: 1.6;
+}
+/* HOVER EFFECT — even taller */
+.ln-item:hover .ln-inner {
+  min-height: 700px;        /* Thoda sa increase hover pe */
+  padding: 100px 60px;
+}
+
+/* Purple hover */
+.purple-item:hover .ln-inner {
+  background: #e3c4f7;
+  color: #000000;
+}
+
+/* Pink hover */
+.pink-item:hover .ln-inner {
+  background: #e6b7cd;
+  color: #000000;
+}
+
+
+
+#marquee-container {
+  width: 100%;
+  height: 50vh; /* give height so div is visible */
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+#marquee {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  align-items: center;
+}
+
+#marquee img {
+  width: clamp(50px, 5vw, 80px);
+  height: auto;
+}
+
+#page1, #page2, #page3 {
+  width: 100%;
+  
+}
+
+
+#page2 {
+  background-color: #d9ff06;
+  color: #000;
+  width: 100%;
+}
+
+#move {
+  display: flex;
+  padding: 25px 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+#marque {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 20px;
+  transform: translateX(-100%); 
+}
+#scroll-animte-text #move {
+  display: flex;
+  gap: 30px; /* space between marquees */
+  overflow: hidden;
+}
+
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+
+#marque img {
+  width: 50px;
+  height: auto;
+}
+
+
+#marque h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem); 
+  font-family: monospace;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+}
+
+
 *{
     margin:0;
     padding:0;
@@ -661,7 +814,7 @@ margin-bottom: 60px;
 }
 
 body{
-    background:#000;
+ 
     color:#fff;
     font-family:Arial, sans-serif;
 }
@@ -672,6 +825,7 @@ body{
     display:flex;
     flex-direction:column;
     gap:50px;
+    background-color: #000;
 }
 
 /* --------------------------
@@ -837,7 +991,8 @@ body{
   display: flex;
   /* justify-content: center;     
   /* text-align: center; */
-  padding: 0 10px;             
+  padding: 0 10px;          
+  color: #fff;   
 }
 
 .branduim-h1 h1 {
@@ -852,27 +1007,19 @@ body{
 }
 
 /* ===== RESPONSIVE ===== */
-
-
-@media (max-width: 992px) {
-  .branduim-h1 h1 {
-    font-size: 4rem;
+@media (max-width: 800px){
+  .ln-title{
+    font-size: 4rem;     /* mobile/tablet */
   }
 }
 
-/* Adjust font for small screens */
-@media (max-width: 768px) {
-  .branduim-h1 h1 {
-    font-size: 3rem;
+@media (max-width: 500px){
+  .ln-title{
+    font-size: 2.8rem;   /* small phones */
+    white-space: normal; /* yahan allow karo wrap agar screen bohot choti ho */
   }
 }
 
-/* Adjust font for very small screens */
-@media (max-width: 480px) {
-  .branduim-h1 h1 {
-    font-size: 2rem;
-  }
-}
 @media (max-width: 992px) {
   #FEATURED-h1 {
     font-size: 3rem;
@@ -892,6 +1039,26 @@ body{
     font-size: 2rem;
   }
 }
+@media (max-width: 992px) {
+  .branduim-h1 h1 {
+    font-size: 4rem;
+  }
+}
+
+/* Adjust font for small screens */
+@media (max-width: 768px) {
+  .branduim-h1 h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Adjust font for very small screens */
+@media (max-width: 480px) {
+  .branduim-h1 h1 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column; /* stack items vertically */

@@ -487,9 +487,73 @@ gsap.from(".branduim-h1", {
   duration: 1.4,
   ease: "power4.out"  // Premium easing
 });
+gsap.from(".ln-title", {
+  scrollTrigger: {
+    trigger: ".ln-title",
+    start: "top 85%",
+    toggleActions: "play none none none"
+  },
+  y: 120,          // Neeche se uthega
+  opacity: 0,      // Fade effect
+  skewY: 8,        // Premium skew entry
+  duration: 1.4,
+  ease: "power4.out"
+});
 
 
 }
 
+
 h1Animte()
-  
+
+
+
+const marqueAnimation = () => {
+  const marquee = document.querySelector("#marquee");
+  const images = marquee.querySelectorAll("img");
+
+  window.addEventListener("wheel", (eve) => {
+    if (eve.deltaY > 0) {
+      // Scroll down → move marquee left & rotate images
+      gsap.to(marquee, {
+        x: "-200%",
+        duration: 2,
+        repeat: -1,
+        ease: "none"
+      });
+      gsap.to(images, {
+        rotation: 180,
+        duration: 0.5,
+        ease: "power1.out"
+      });
+    } else {
+      // Scroll up → move marquee back & reset rotation
+      gsap.to(marquee, {
+        x: "0%",
+        duration: 2,
+        repeat: -1,
+        ease: "none"
+      });
+      gsap.to(images, {
+        rotation: 0,
+        duration: 0.5,
+        ease: "power1.out"
+      });
+    }
+  });
+};
+
+marqueAnimation();
+
+
+
+
+
+
+    document.querySelectorAll('.ln-item').forEach(item=>{
+      item.addEventListener('focus', ()=> item.classList.add('focused'));
+      item.addEventListener('blur',  ()=> item.classList.remove('focused'));
+    });
+
+
+    
