@@ -542,4 +542,43 @@ marqueAnimation()
     });
 
 
-    
+    function duplicateContent(lineID) {
+    const line = document.querySelector(lineID);
+    const clone = line.cloneNode(true);
+    line.parentElement.appendChild(clone);
+}
+
+duplicateContent("#line1");
+duplicateContent("#line2");
+
+function createMarquee(selector, speed, direction = 1) {
+    const line = document.querySelector(selector);
+    const totalWidth = line.scrollWidth / 2;
+
+    gsap.to(selector, {
+        x: direction * -totalWidth,
+        duration: speed,
+        ease: "none",
+        repeat: -1,
+        modifiers: {
+            x: (x) => {
+                x = parseFloat(x);
+                return ((x % -totalWidth) + "px");
+            }
+        }
+    });
+}
+
+// line1 → left
+createMarquee("#line1", 18, 1);
+
+// line2 → right
+createMarquee("#line2", 18, -1);
+
+
+// scroll direction change
+window.addEventListener("wheel", (e) => {
+    const dir = e.deltaY > 0 ? 1 : -1;
+
+    gsap.globalTimeline.timeScale(dir);
+});
