@@ -505,49 +505,35 @@ gsap.from(".ln-title", {
 
 
 h1Animte()
-
-
-
-const marqueAnimation = () => {
-  const marquee = document.querySelector("#marquee");
-  const images = marquee.querySelectorAll("img");
-
-  window.addEventListener("wheel", (eve) => {
-    if (eve.deltaY > 0) {
-      // Scroll down → move marquee left & rotate images
-      gsap.to(marquee, {
-        x: "-200%",
-        duration: 2,
-        repeat: -1,
-        ease: "none"
-      });
-      gsap.to(images, {
-        rotation: 180,
-        duration: 0.5,
-        ease: "power1.out"
-      });
-    } else {
-      // Scroll up → move marquee back & reset rotation
-      gsap.to(marquee, {
-        x: "0%",
-        duration: 2,
-        repeat: -1,
-        ease: "none"
-      });
-      gsap.to(images, {
-        rotation: 0,
-        duration: 0.5,
-        ease: "power1.out"
-      });
-    }
-  });
-};
-
-marqueAnimation();
-
-
-
-
+const marqueAnimation = ()=>{
+    window.addEventListener("wheel" ,(eve)=>{
+   if(eve.deltaY>0){
+    gsap.to("#marque" ,{
+    transform:"translateX(-200%)",
+    duration:2,
+    delay:2,
+    repeat:-1,
+    ease:"none"
+})
+gsap.to("#marque img",{
+    rotation:180
+})
+    
+   }else{
+  gsap.to("#marque" ,{
+    transform:"translateX(0%)",
+    duration:2,
+    delay:2,
+    repeat:-1,
+    ease:"none"
+})
+gsap.to("#marque img",{
+    rotation:0
+})
+   }
+})
+}
+marqueAnimation()
 
 
     document.querySelectorAll('.ln-item').forEach(item=>{
