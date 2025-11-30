@@ -582,3 +582,50 @@ window.addEventListener("wheel", (e) => {
 
     gsap.globalTimeline.timeScale(dir);
 });
+
+
+
+
+const email = document.querySelector(".email");
+const sections = document.querySelectorAll("section");
+
+// function to check if background is dark
+function isDarkColor(rgb) {
+  const rgbValues = rgb.match(/\d+/g);
+  const r = parseInt(rgbValues[0]);
+  const g = parseInt(rgbValues[1]);
+  const b = parseInt(rgbValues[2]);
+  const brightness = (r*299 + g*587 + b*114)/1000;
+  return brightness < 128;
+}
+
+function updateEmailColor() {
+  const scrollY = window.scrollY;
+  const viewportHeight = window.innerHeight;
+  const windowCenter = scrollY + viewportHeight / 2;
+
+  let colorSet = false;
+
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top + scrollY;
+    const sectionBottom = sectionTop + rect.height;
+
+    // check if center of viewport is inside section
+    if(windowCenter >= sectionTop && windowCenter < sectionBottom) {
+      const bgColor = getComputedStyle(section).backgroundColor;
+      email.style.color = isDarkColor(bgColor) ? "white" : "black";
+      colorSet = true;
+    }
+  });
+
+  // fallback: if no section matched, make email black (optional)
+  if(!colorSet) {
+    email.style.color = "black";
+  }
+}
+
+window.addEventListener("scroll", updateEmailColor);
+window.addEventListener("resize", updateEmailColor); // optional, in case viewport changes
+updateEmailColor(); // initial check
+
