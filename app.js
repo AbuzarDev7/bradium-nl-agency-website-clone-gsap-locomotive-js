@@ -8,7 +8,9 @@ const buttons = document.querySelectorAll(".grow-btn");
 const rope = document.querySelector("#rope");
 const curser = document.getElementById("curser");
 const h1 = document.querySelector(".animated-h1");
-
+  const hoverBoxes = document.querySelectorAll('.hover-box');
+  const hoverImg = document.getElementById('hover-img');
+  const imgTag = hoverImg.querySelector('img');
 // Timeline
 const sideBarAnimate = ()=>{
     let tl = gsap.timeline()
@@ -421,9 +423,7 @@ ease: "power3.inOut"
 
 
 
-  const hoverBoxes = document.querySelectorAll('.hover-box');
-  const hoverImg = document.getElementById('hover-img');
-  const imgTag = hoverImg.querySelector('img');
+
 
   hoverBoxes.forEach(box => {
     box.addEventListener('mouseenter', () => {
@@ -629,3 +629,14 @@ window.addEventListener("scroll", updateEmailColor);
 window.addEventListener("resize", updateEmailColor); // optional, in case viewport changes
 updateEmailColor(); // initial check
 
+
+/* JavaScript */
+window.addEventListener("scroll", () => {
+const scrollBtn = document.querySelector(".scroll-btn");
+const scrollTop = window.scrollY;
+const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+const scrollPercent = Math.min(scrollTop / docHeight, 1); // 0 to 1
+
+// Convert to yellow with alpha based on scroll percentage
+scrollBtn.style.backgroundColor = `rgba(255, 255, 0, ${scrollPercent})`;
+});
