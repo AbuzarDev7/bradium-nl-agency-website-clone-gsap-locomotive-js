@@ -73,7 +73,7 @@ curseMouse()
 const animateText=()=>{
 const links = document.querySelectorAll(".sidebar a");
 
-// First: wrap every letter in span
+
 links.forEach(link => {
   const text = link.textContent.trim();
   link.innerHTML = text // text split 
@@ -126,7 +126,7 @@ animateText()
 
 const svgLines = () => {
   const svgWidth = 1200;
-  const segments = 40; // More segments = smoother rope
+  const segments = 40; 
   const baseY = 100;
 
   // Function to initialize a single SVG
@@ -177,8 +177,8 @@ const svgLines = () => {
     gsap.ticker.add(() => {
       points.forEach(p => {
         const dy = p.targetY - p.y;
-        p.velocity += dy * 0.18;  // acceleration
-        p.velocity *= 0.9;        // damping
+        p.velocity += dy * 0.18;  
+        p.velocity *= 0.9;        
         p.y += p.velocity;
       });
       rope.setAttribute("d", generatePath());
@@ -191,7 +191,7 @@ const svgLines = () => {
   });
 };
 
-// Initialize all ropes
+
 svgLines();
 
 
@@ -228,7 +228,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-// SVG sirf X axis se aaye — left se right
+// SVG sirf X axis 
 gsap.fromTo(
   ".svg-line",
   { x: -800, opacity: 0 },
@@ -290,8 +290,8 @@ const imgsAnimate = ()=>{
 
   div.addEventListener("mouseenter", () => {
     gsap.to(media, {
-      scale: 1.05,       // slightly zoom in
-      rotation: 1,       // slight tilt
+      scale: 1.05,       
+      rotation: 1,       
       duration: 0.5,
       ease: "power2.out"
     });
@@ -299,8 +299,8 @@ const imgsAnimate = ()=>{
 
   div.addEventListener("mousemove", (e) => {
     const rect = div.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10; // tilt left/right
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10; // tilt up/down
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10; 
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10; 
     gsap.to(media, {
       rotationY: x,
       rotationX: -y,
@@ -455,11 +455,11 @@ const h1Animte=()=>{
     start: "top 80%",
     toggleActions: "play none none none"
   },
-  y: 120,              // zyada depth feeling
+  y: 120,              
   opacity: 0,
-  skewY: 8,            // smooth skew effect
+  skewY: 8,           
   duration: 1.4,
-  ease: "power4.out",  // premium easing
+  ease: "power4.out",
 });
 
 gsap.from(".wrapper-h1", {
@@ -468,11 +468,11 @@ gsap.from(".wrapper-h1", {
     start: "top 85%",
     toggleActions: "play none none none"
   },
-  y: 120,             // Neeche se uthega
-  opacity: 0,         // Fade in
-  skewY: 8,           // Smooth skew
+  y: 120,            
+  opacity: 0,         
+  skewY: 8,        
   duration: 1.4,
-  ease: "power4.out"  // Premium easing
+  ease: "power4.out"  
 });
 
 gsap.from(".branduim-h1", {
@@ -481,11 +481,11 @@ gsap.from(".branduim-h1", {
     start: "top 85%",
     toggleActions: "play none none none"
   },
-  y: 120,             // Neeche se uthega
-  opacity: 0,         // Fade in
-  skewY: 8,           // Smooth skew
+  y: 120,             
+  opacity: 0,        
+  skewY: 8,           
   duration: 1.4,
-  ease: "power4.out"  // Premium easing
+  ease: "power4.out"  
 });
 gsap.from(".ln-title", {
   scrollTrigger: {
@@ -493,9 +493,9 @@ gsap.from(".ln-title", {
     start: "top 85%",
     toggleActions: "play none none none"
   },
-  y: 120,          // Neeche se uthega
-  opacity: 0,      // Fade effect
-  skewY: 8,        // Premium skew entry
+  y: 120,          
+  opacity: 0,     
+  skewY: 8,      
   duration: 1.4,
   ease: "power4.out"
 });
@@ -569,14 +569,14 @@ function createMarquee(selector, speed, direction = 1) {
     });
 }
 
-// line1 → left
+// line1  left
 createMarquee("#line1", 18, 1);
 
-// line2 → right
+// line2  right
 createMarquee("#line2", 18, -1);
 
 
-// scroll direction change
+
 window.addEventListener("wheel", (e) => {
     const dir = e.deltaY > 0 ? 1 : -1;
 
@@ -619,23 +619,23 @@ function updateEmailColor() {
     }
   });
 
-  // fallback: if no section matched, make email black (optional)
+ 
   if(!colorSet) {
     email.style.color = "black";
   }
 }
 
 window.addEventListener("scroll", updateEmailColor);
-window.addEventListener("resize", updateEmailColor); // optional, in case viewport changes
-updateEmailColor(); // initial check
+window.addEventListener("resize", updateEmailColor);
+updateEmailColor();
 
 
-/* JavaScript */
+
 window.addEventListener("scroll", () => {
 const scrollBtn = document.querySelector(".scroll-btn");
 const scrollTop = window.scrollY;
 const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-const scrollPercent = Math.min(scrollTop / docHeight, 1); // 0 to 1
+const scrollPercent = Math.min(scrollTop / docHeight, 1); 
 
 // Convert to yellow with alpha based on scroll percentage
 scrollBtn.style.backgroundColor = `rgba(255, 255, 0, ${scrollPercent})`;

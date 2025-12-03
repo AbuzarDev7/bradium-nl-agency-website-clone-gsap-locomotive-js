@@ -43,7 +43,7 @@ position: fixed;
       background-position: center;
     }
 
-    /* ⭐ TEXT BLEND EFFECT */
+    /*TEXT BLEND EFFECT */
     .text-overlay {
       position: absolute;
       top: 12%;
@@ -75,7 +75,7 @@ position: fixed;
   font-size: 1.3rem;
 
   z-index: 20;
-  mix-blend-mode: difference;   /* ⭐ ADD THIS */
+  mix-blend-mode: difference;   
     position: fixed;
 }
 #toggle-btn i{
@@ -95,10 +95,10 @@ color: #665353ec;
 .sidebar a {
   text-decoration: none;
   color: white;
-  opacity: 0.95;                    /* slight visibility boost */
+  opacity: 0.95;                   
   transition: 0.3s;
   font-size: 1.5rem;
-  /* ⭐ Make links more readable */
+ 
   text-shadow: 0px 0px 6px rgba(255,255,255,0.45);  
   -webkit-text-stroke: 0.4px rgba(255,255,255,0.4); 
 
@@ -120,7 +120,7 @@ color: #665353ec;
   transform: rotate(-90deg) translateY(-50%);
   font-size: 1.5rem;
   z-index: 1000;
-  color: black; /* default */
+  color: black;
   transition: color 0.25s linear;
   pointer-events: none;
 }
@@ -246,7 +246,7 @@ top: 40px;
 
 
 
-    /* ===== BRANDIUM HERO SECTION ===== */
+    /*BRANDIUM HERO SECTION */
 .brandium-hero {
   background: #000;
   color: #fff;
@@ -317,7 +317,7 @@ top: 40px;
   height: auto;
 }
 
-/* ===== RESPONSIVE ===== */
+
 
 
 
@@ -339,10 +339,10 @@ top: 40px;
   bottom: 60px;
   font-size: 3rem;
   color: #000;
-      background: rgba(255, 255, 0, 0); /* start transparent */
+      background: rgba(255, 255, 0, 0);
  
-    transition: background 0.1s linear; /* smooth transition */
-/* GSAP isko change karega */
+    transition: background 0.1s linear; 
+
   padding: 25px;
   border-radius: 50%;
   pointer-events: none;
@@ -383,7 +383,7 @@ top: 40px;
 .grow-btn .dot {
     width: 16px;
     height: 16px;
-    background: #d9ff06;   /* yellow dot */
+    background: #d9ff06;   
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -395,12 +395,12 @@ top: 40px;
 /* Arrow inside dot, initially hidden */
 .grow-btn .dot i {
     position: absolute;
-    bottom: 0;             /* start at dot center */
+    bottom: 0;             
     left: 50%;
-    transform: translate(-50%, 0); /* center horizontally */
+    transform: translate(-50%, 0);
     font-size: 20px;
     color: #000;
-    display: none;         /* hidden initially */
+    display: none;         
 }
 
 
@@ -448,7 +448,7 @@ top: 40px;
     #img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill div, maintain aspect ratio */
+  object-fit: cover;
   display: block;
 }
 #video-sec{
@@ -464,7 +464,7 @@ top: 40px;
 .info-card {
   width: 280px;
   padding: 20px 25px;
-  background: rgba(0, 0, 0, 0.85);  /* black background with slight transparency */
+  background: rgba(0, 0, 0, 0.85);  
   border-radius: 14px;
   box-shadow: 0 5px 25px rgba(0,0,0,0.3);
   display: flex;
@@ -477,23 +477,24 @@ top: 40px;
   font-size: 38px;
   font-weight: 600;
   margin: 0;
-  color: #ffffff;   /* white */
+  color: #ffffff;   
+  
 }
 
 .info-card h1, .info-card p {
   font-size: 24px;
   opacity: 0.7;
   margin: 0;
-  color: #a7a6a6;   /* gray */
+  color: #a7a6a6;   
 }
 .marquee-text {
-  display: none;         /* initially hidden */
+  display: none;         
   white-space: nowrap;
   font-size: 14px;
   color: black;
   position: absolute;
-  top: 10px;             /* inside parent */
-  left: 100%;            /* start off screen */
+  top: 10px;             
+  left: 100%;           
   z-index: 10;
 }
 
@@ -508,7 +509,7 @@ top: 40px;
   width: 100%;
   /* padding: 100px 5%; */
   box-sizing: border-box;
-  flex-wrap: wrap; /* allow wrapping on small screens */
+  flex-wrap: wrap;
   
 }
 
@@ -534,9 +535,9 @@ top: 40px;
 .right-side {
   width: 35%;
   display: flex;
-  justify-content: flex-end;   /* RIGHT SIDE */
-  align-items: flex-start;     /* TOP SIDE */
-  padding-top: 0;              /* Make sure no extra spacing */
+  justify-content: flex-end;  
+  align-items: flex-start;     
+  padding-top: 0;              
 }
 
 /* Button styling */
@@ -573,7 +574,7 @@ top: 40px;
   position: relative;
   border-top-left-radius: 150px; 
   border-top-right-radius: 150px; 
-  overflow: hidden; /* ensures child elements respect border radius */
+  overflow: hidden;
   background-color: #f5f5f5;
   color: #000;
   bottom: 100px;
@@ -691,7 +692,7 @@ margin-bottom: 60px;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 20px;
-  padding-left: 60px;   /* matches your ln-inner padding */
+  padding-left: 60px;   
 }
 
 
@@ -705,24 +706,24 @@ margin-bottom: 60px;
   color: #000;
 }
 .ln-title{
-  font-size: 10rem;       /* 6 REM = approx 96px */
+  font-size: 10rem;       
   font-weight: 700;
   letter-spacing: -2px;
   margin: 0;
-  text-align: center;    /* CENTER */
+  text-align: center;   
   white-space: nowrap;
-  color: #000;   /* Ek line me hi rahega */
+  color: #000;  
 }
 
 /* Inner rounded container */
 .ln-inner {
-  min-height: 500px;        /* 🔥 ye add kiya! */
+  min-height: 500px;        
   padding: 80px 60px;
   border-radius: 28px;
   transition: 0.45s ease;
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Text vertically center — premium look */
+  justify-content: center;  
 }
 .ln-inner h2{
   font-size: 4.5rem;
@@ -730,9 +731,9 @@ margin-bottom: 60px;
 .ln-inner p{
   font-size: 2rem;
 }
-/* HOVER EFFECT — even taller */
+
 .ln-item:hover .ln-inner {
-  min-height: 700px;        /* Thoda sa increase hover pe */
+  min-height: 700px;        
   padding: 100px 60px;
 }
 
@@ -779,7 +780,7 @@ margin-bottom: 60px;
 }
 #scroll-animte-text #move {
   display: flex;
-  gap: 30px; /* space between marquees */
+  gap: 30px; 
   overflow: hidden;
 }
 
@@ -827,9 +828,7 @@ body{
     background-color: #000;
 }
 
-/* --------------------------
-   LEFT HEADING + GET IN TOUCH
---------------------------- */
+
 .footer-section h1{
     font-size:48px;
     font-weight:700;
@@ -865,9 +864,7 @@ body{
 
 
 
-/* --------------------------
-   NAVIGATION AREA
---------------------------- */
+
 .footer-section nav{
     display:flex;
     justify-content:space-between;
@@ -919,9 +916,6 @@ body{
 
 
 
-/* --------------------------
-   PHONE & EMAIL HOVER EFFECT
---------------------------- */
 
 .footer-section nav article p a{
     color:#fff;
@@ -950,7 +944,7 @@ body{
     z-index:-1;
 }
 
-/* hover text (Call Us → / Send Email → ) */
+/* hover text Call Us  Send Email   */
 .footer-section nav article p a::after{
     content:attr(data-hover);
     position:absolute;
@@ -995,7 +989,7 @@ body{
 }
 
 .marquee-line img {
-  height: 60px; /* adjust logo size */
+  height: 60px; 
   object-fit: contain;
 }
 
@@ -1066,16 +1060,15 @@ body{
     display: none !important;
   }
 
-  /* Make paragraph visible and readable */
   .ln-item .ln-inner p {
     display: block !important;
-    font-size: 1.6rem; /* adjust as needed */
+    font-size: 1.6rem; 
     line-height: 1.5;
-    color: #000;       /* make text visible */
+    color: #000;      
     margin: 0 0 15px 0;
   }
 
-  /* Disable hover effects completely */
+
   .ln-item,
   .ln-item:hover,
   .ln-item:hover .ln-inner {
@@ -1086,7 +1079,7 @@ body{
     color: inherit !important;
   }
 
-  /* Ensure inner container has enough height */
+  
   .ln-item .ln-inner {
     padding: 10px 0 !important;
   }
@@ -1094,14 +1087,14 @@ body{
 
 @media (max-width: 800px){
   .ln-title{
-    font-size: 4rem;     /* mobile/tablet */
+    font-size: 4rem;    
   }
 }
 
 @media (max-width: 500px){
   .ln-title{
-    font-size: 2.8rem;   /* small phones */
-    white-space: normal; /* yahan allow karo wrap agar screen bohot choti ho */
+    font-size: 2.8rem; 
+    white-space: normal; 
   }
 }
 
@@ -1146,7 +1139,7 @@ body{
 
 @media (max-width: 768px) {
   .hero-section {
-    flex-direction: column; /* stack items vertically */
+    flex-direction: column; 
     align-items: center;
     text-align: center;
   }
@@ -1159,7 +1152,7 @@ body{
   .right-side {
     width: 100%;
     justify-content: center;
-    margin-top: 20px; /* button below text */
+    margin-top: 20px; 
   }
 
   .hero-text {
@@ -1190,22 +1183,22 @@ body{
 /* Default (desktop) */
 .marquee-text p {
   font-size: 50px;
-  text-align: left; /* ya jo tum pehle se use kar rahe ho */
+  text-align: left; 
 }
 
 /* Responsive: Mobile screen */
 @media (max-width: 768px) {
   .marquee-text p {
-    text-align: center;   /* ← small screens par center */
-    font-size: 28px;      /* ← text size smaller */
+    text-align: center;   
+    font-size: 28px;      
   }
 
   .info-card h3 {
-    font-size: 24px;      /* card title smaller */
+    font-size: 24px;     
   }
 
   .info-card p {
-    font-size: 14px;      /* card subtitle smaller */
+    font-size: 14px;    
   }
 }
 
