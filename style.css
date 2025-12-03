@@ -132,7 +132,7 @@ color: #665353ec;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -100%;    /* hidden initially */
+  right: -100%;   
   background-color: #000;
   color: #fff;
   display: flex;
@@ -308,7 +308,7 @@ top: 40px;
   margin-top: 50px;
   width: 100%;
   display: flex;
-  justify-content: flex-start; /* LEFT align SVG */
+  justify-content: flex-start; 
 }
 
 .rope-svg {
@@ -1037,7 +1037,7 @@ body{
 @media (max-width: 1440px) {
 
 #FEATURED-h1 { font-size: 3.5rem; }
-.branduim-h1 h1 { font-size: 3.5rem; }
+.branduim-h1 h1 { font-size: 6rem; }
 .animated-h1 { font-size: 60px; }
 }
 @media (max-width: 768px) {
