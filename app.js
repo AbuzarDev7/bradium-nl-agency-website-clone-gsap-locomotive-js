@@ -163,7 +163,7 @@ const svgLines = () => {
       points.forEach(p => {
         const dx = p.x - mouseX;
         const distance = Math.abs(dx);
-        const influence = Math.max(0, 350 - distance); // ripple width
+        const influence = Math.max(0, 350 - distance); 
         p.targetY = baseY + (mouseY - baseY) * (influence / 350) * 0.8;
       });
     });
@@ -286,7 +286,7 @@ allH1.forEach(h1 => {
 
 const imgsAnimate = ()=>{
   mediaDivs.forEach(div => {
-  const media = div.querySelector("img, video"); // select img or video inside
+  const media = div.querySelector("img, video"); 
 
   div.addEventListener("mouseenter", () => {
     gsap.to(media, {

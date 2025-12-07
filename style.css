@@ -661,7 +661,7 @@ margin-bottom: 60px;
     left: 0;
     width: 300px;
     height: 400px;
-    pointer-events: none; /* Mouse events pass through */
+    pointer-events: none;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0;
@@ -677,13 +677,13 @@ margin-bottom: 60px;
     display: block;
   }
   .wrapper-h1 {
-  text-align: center;        /* Center me karega */
-  font-size: 5.5rem;           /* Font size bada */
-  font-weight: 700;          /* Bold premium look */
+  text-align: center;        
+  font-size: 5.5rem;      
+  font-weight: 700;        
   margin: 120px 0 60px;      
   line-height: 1.1;
 }
-/* Meta text (AWARDS – 5 min) */
+
 .ln-meta {
   display: flex;
   gap: 20px;
@@ -1215,11 +1215,11 @@ body{
 @media (max-width: 1024px) {
   #video-sec {
     flex-direction: column;
-    align-items: center; /* center all items */
+    align-items: center; 
   }
 
   .item {
-    margin-bottom: 40px; /* spacing between items */
+    margin-bottom: 40px; 
   }
 
   #video, #img, .info-card {
@@ -1228,7 +1228,7 @@ body{
   }
 
   .info-card {
-    margin: 0 auto; /* center the card */
+    margin: 0 auto; 
   }
 }
 
@@ -1276,11 +1276,11 @@ body{
 @media (max-width: 1024px) {
   #video-sec {
     flex-direction: column;
-    align-items: center; /* center all items */
+    align-items: center;
   }
 
   .item {
-    margin-bottom: 40px; /* spacing between items */
+    margin-bottom: 40px; 
   }
 
   #video, #img, .info-card {
@@ -1289,12 +1289,12 @@ body{
   }
 
   .info-card {
-    margin: 0 auto; /* center the card */
+    margin: 0 auto; 
   }
 
   /* H1 size adjust */
   #h1 h1 {
-    font-size: 3rem; /* thoda chhota */
+    font-size: 3rem; 
     text-align: center;
   }
 }
@@ -1362,7 +1362,7 @@ body{
 
 @media (max-width: 768px) {
   .video-sec {
-    align-items: center;  /* center on mobile */
+    align-items: center; 
   }
   .video {
     width: 90%;
@@ -1523,7 +1523,7 @@ body{
       }
     }
 
-    /* 📱 SMALLER MOBILE */
+
     @media (max-width: 480px) {
       .text-overlay span {
         font-size: clamp(2rem, 14vw, 6rem);
