@@ -1020,7 +1020,11 @@ body{
 
 /* ===== RESPONSIVE ===== */
 
-
+@media (max-width: 768px){
+  .scroll-btn{
+    display: none;
+  }
+}
 @media (max-width: 1024px) {
 #FEATURED-h1 { font-size: 3rem; }
 .branduim-h1 h1 { font-size: 3.5rem; }
