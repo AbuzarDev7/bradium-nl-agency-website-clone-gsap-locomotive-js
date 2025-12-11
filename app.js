@@ -298,9 +298,9 @@ const imgsAnimate = ()=>{
   });
 
   div.addEventListener("mousemove", (e) => {
-    const rect = div.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10; 
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10; 
+    const imgVideo = div.getBoundingClientRect();
+    const x = ((e.clientX - imgVideo.left) / imgVideo.width - 0.5) * 10; 
+    const y = ((e.clientY - imgVideo.top) / imgVideo.height - 0.5) * 10; 
     gsap.to(media, {
       rotationY: x,
       rotationX: -y,
@@ -353,11 +353,19 @@ items.forEach(item => {
 
   item.addEventListener("mouseenter", () => {
     cursorText.textContent = marquee.textContent;
-    gsap.to(curser, { width: 200, height: 50, duration: 0.3, ease: "power2.out" });
+    gsap.to(curser,
+       { 
+        width: 200,
+         height: 50,
+          duration: 0.3,
+           ease: "power2.out" });
 
     marqueeTween = gsap.fromTo(cursorText,
       { x: 200 },
-      { x: -200, duration: 5, repeat: -1, ease: "linear" }
+      { x: -200,
+         duration:
+          5, repeat:
+           -1, ease: "linear" }
     );
   });
 
@@ -607,9 +615,9 @@ function updateEmailColor() {
   let colorSet = false;
 
   sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    const sectionTop = rect.top + scrollY;
-    const sectionBottom = sectionTop + rect.height;
+    const emailSec = section.getBoundingClientRect();
+    const sectionTop = emailSec.top + scrollY;
+    const sectionBottom = sectionTop + emailSec.height;
 
     // check if center of viewport is inside section
     if(windowCenter >= sectionTop && windowCenter < sectionBottom) {
